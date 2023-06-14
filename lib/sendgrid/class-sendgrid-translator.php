@@ -261,7 +261,7 @@ class Sendgrid_Translator {
     foreach ( $email_v2->bcc as $index => $address ) {
       // Check if "bcc name" is set
       $bcc_name = null;
-      if ( self::is_valid_string( $email_v2->bccName[ $index ] ) ) {
+      if ( is_array($email_v2->bccName) && self::is_valid_string( $email_v2->bccName[ $index ] ) ) {
         $bcc_name = trim( $email_v2->bccName[ $index ] );
       }
 
