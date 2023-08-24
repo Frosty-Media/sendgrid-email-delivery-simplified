@@ -69,7 +69,7 @@ class ClickTracking implements \JsonSerializable
         return $this->enable_text;
     }
 
-    public function jsonSerialize()
+    #[ReturnTypeWillChange] public function jsonSerialize()
     {
         return array_filter(
             [
@@ -350,7 +350,7 @@ class BccSettings implements \JsonSerializable
         return $this->email;
     }
 
-    public function jsonSerialize()
+    #[ReturnTypeWillChange] public function jsonSerialize()
     {
         return array_filter(
             [
