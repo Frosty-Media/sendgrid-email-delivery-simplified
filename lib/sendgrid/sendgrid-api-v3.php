@@ -1,15 +1,17 @@
 <?php
 /**
-  * This helper builds the request body for a /mail/send API call.
-  *
-  * PHP version 5.3
-  *
-  * @author    Elmer Thomas <dx@sendgrid.com>
-  * @copyright 2016 SendGrid
-  * @license   https://opensource.org/licenses/MIT The MIT License
-  * @link      http://packagist.org/packages/sendgrid/sendgrid
-  */
+ * This helper builds the request body for a /mail/send API call.
+ *
+ * PHP version 5.3
+ *
+ * @author    Elmer Thomas <dx@sendgrid.com>
+ * @copyright 2016 SendGrid
+ * @license   https://opensource.org/licenses/MIT The MIT License
+ * @link      http://packagist.org/packages/sendgrid/sendgrid
+ */
 namespace SendGridV3;
+
+use ReturnTypeWillChange;
 
 class ReplyTo implements \JsonSerializable
 {
@@ -31,7 +33,7 @@ class ReplyTo implements \JsonSerializable
         return $this->email;
     }
 
-    public function jsonSerialize()
+    #[ReturnTypeWillChange] public function jsonSerialize()
     {
         return array_filter(
             [
@@ -104,7 +106,7 @@ class OpenTracking implements \JsonSerializable
         return $this->substitution_tag;
     }
 
-    public function jsonSerialize()
+    #[ReturnTypeWillChange] public function jsonSerialize()
     {
         return array_filter(
             [
@@ -163,7 +165,7 @@ class SubscriptionTracking implements \JsonSerializable
         return $this->substitution_tag;
     }
 
-    public function jsonSerialize()
+    #[ReturnTypeWillChange] public function jsonSerialize()
     {
         return array_filter(
             [
@@ -246,7 +248,7 @@ class Ganalytics implements \JsonSerializable
         return $this->utm_campaign;
     }
 
-    public function jsonSerialize()
+    #[ReturnTypeWillChange] public function jsonSerialize()
     {
         return array_filter(
             [
@@ -309,7 +311,7 @@ class TrackingSettings implements \JsonSerializable
         return $this->ganalytics;
     }
 
-    public function jsonSerialize()
+    #[ReturnTypeWillChange] public function jsonSerialize()
     {
         return array_filter(
             [
@@ -374,7 +376,7 @@ class BypassListManagement implements \JsonSerializable
         return $this->enable;
     }
 
-    public function jsonSerialize()
+    #[ReturnTypeWillChange] public function jsonSerialize()
     {
         return array_filter(
             [
@@ -421,7 +423,7 @@ class Footer implements \JsonSerializable
         return $this->html;
     }
 
-    public function jsonSerialize()
+    #[ReturnTypeWillChange] public function jsonSerialize()
     {
         return array_filter(
             [
@@ -447,7 +449,7 @@ class SandBoxMode implements \JsonSerializable
     {
         return $this->enable;
     }
-    public function jsonSerialize()
+    #[ReturnTypeWillChange] public function jsonSerialize()
     {
         return array_filter(
             [
@@ -494,7 +496,7 @@ class SpamCheck implements \JsonSerializable
         return $this->post_to_url;
     }
 
-    public function jsonSerialize()
+    #[ReturnTypeWillChange] public function jsonSerialize()
     {
         return array_filter(
             [
@@ -565,7 +567,7 @@ class MailSettings implements \JsonSerializable
         return $this->spam_check;
     }
 
-    public function jsonSerialize()
+    #[ReturnTypeWillChange] public function jsonSerialize()
     {
         return array_filter(
             [
@@ -605,7 +607,7 @@ class ASM implements \JsonSerializable
         return $this->groups_to_display;
     }
 
-    public function jsonSerialize()
+    #[ReturnTypeWillChange] public function jsonSerialize()
     {
         return array_filter(
             [
@@ -675,7 +677,7 @@ class Attachment implements \JsonSerializable
         return $this->content_id;
     }
 
-    public function jsonSerialize()
+    #[ReturnTypeWillChange] public function jsonSerialize()
     {
         return array_filter(
             [
@@ -721,7 +723,7 @@ class Content implements \JsonSerializable
         return $this->value;
     }
 
-    public function jsonSerialize()
+    #[ReturnTypeWillChange] public function jsonSerialize()
     {
         return array_filter(
             [
@@ -824,7 +826,7 @@ class Personalization implements \JsonSerializable
         return $this->send_at;
     }
 
-    public function jsonSerialize()
+    #[ReturnTypeWillChange] public function jsonSerialize()
     {
         return array_filter(
             [
@@ -873,7 +875,7 @@ class Email implements \JsonSerializable
         return $this->email;
     }
 
-    public function jsonSerialize()
+    #[ReturnTypeWillChange] public function jsonSerialize()
     {
         return array_filter(
             [
@@ -885,8 +887,8 @@ class Email implements \JsonSerializable
 }
 
 /**
-  * The final request body object
-  */
+ * The final request body object
+ */
 class Mail implements \JsonSerializable
 {
     const VERSION = '1.0.0';
@@ -1027,8 +1029,8 @@ class Mail implements \JsonSerializable
         return $this->custom_args;
     }
 
-     public function setSendAt($send_at)
-     {
+    public function setSendAt($send_at)
+    {
         $this->send_at = $send_at;
     }
 
@@ -1097,7 +1099,7 @@ class Mail implements \JsonSerializable
         return $this->reply_to;
     }
 
-    public function jsonSerialize()
+    #[ReturnTypeWillChange] public function jsonSerialize()
     {
         return array_filter(
             [
