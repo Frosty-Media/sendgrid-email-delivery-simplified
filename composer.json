@@ -1,0 +1,27 @@
+{
+  "name": "frosty-media/sendgrid-email-delivery-simplified",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Austin Passy",
+      "email": "367897+thefrosty@users.noreply.github.com",
+      "homepage": "https://austin.passy.co"
+    }
+  ],
+  "config": {
+    "allow-plugins": {
+    },
+    "optimize-autoloader": true,
+    "platform": {
+      "php": "8.2"
+    },
+    "preferred-install": "dist",
+    "sort-packages": true
+  },
+  "require": {
+    "php": "^8.2",
+    "sendgrid/sendgrid": "~8"
+  },
+  "require-dev": {
+  }
+}
