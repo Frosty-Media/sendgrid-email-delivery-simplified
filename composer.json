@@ -1,5 +1,6 @@
 {
   "name": "frosty-media/sendgrid-email-delivery-simplified",
+  "type": "wordpress-plugin",
   "license": "MIT",
   "authors": [
     {
