@@ -82,7 +82,7 @@ class Sendgrid_Settings {
    */
   public static function add_settings_link( $links )
   {
-    $settings_link = '<a href="options-general.php?page=sendgrid-settings.php">Settings</a>';
+    $settings_link = '<a href="options-general.php?page=sendgrid-settings">Settings</a>';
     array_unshift( $links, $settings_link );
 
     return $links;
